@@ -1,2 +1,2 @@
 # 2025---ProgComputadores
-Programação de Computadores 
+este repositório contém materiais e códigos utilizados durante as aulas de Programação de computadores

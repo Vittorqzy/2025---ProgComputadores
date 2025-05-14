@@ -23,3 +23,4 @@ try:
     print(f'A distância entre os pontos A e B é: {distancia}')
 except ValueError:
     print("Erro: Por favor, insira um número válido.")
+    

@@ -9,3 +9,36 @@
   "python.testing.pytestEnabled": false,
   "python.testing.unittestEnabled": true
 }
+
+import sys
+import random
+
+# O código agora executa diretamente sem uma definição de função
+while True:
+    try:
+        # 1) Solicita ao usuário um valor inteiro N positivo (valor máximo para N <= 100)
+        n_str = input("Informe um valor inteiro positivo para N (máximo 100): ")
+        n = int(n_str)
+
+        if not (1 <= n <= 100):
+            print("ERRO: N deve ser um inteiro entre 1 e 100. Tente novamente.\n")
+        else:
+            break # Sai do loop se N for válido
+    except ValueError:
+        print("ERRO: Informe um valor inteiro válido para N. Tente novamente.\n")
+    except Exception as e:
+        # Captura qualquer outra exceção inesperada e sai do programa
+        sys.exit(f"ERRO inesperado: {e}\n")
+
+# 2) Gere uma lista com N valores inteiros aleatórios entre -100 e +100
+lista_original = [random.randint(-100, 100) for _ in range(n)]
+print(f"\nLista original ({len(lista_original)} elementos):")
+print(lista_original)
+
+# 3) A partir da lista gerada, gere uma segunda lista apenas com os números pares da lista
+lista_pares = [num for num in lista_original if num % 2 == 0]
+print(f"\nLista de números pares ({len(lista_pares)} elementos):")
+print(lista_pares)
+
+
+
